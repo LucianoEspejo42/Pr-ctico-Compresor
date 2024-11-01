@@ -5,6 +5,8 @@ Este proyecto implementa un compresor de archivos diseñado para reducir el tama
 - `Transformación Burrows-Wheeler (BWT)`
 - `Codificación Shannon con Modelo de Markov de Orden 2`
 
+NOTA: La velocidad de compresión es lenta para archivos grandes.
+
 ## Pasos a seguir para la ejecución del proyecto 
 
 - Ejecuta el archivo `encode.py`.
