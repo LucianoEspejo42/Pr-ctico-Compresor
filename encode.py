@@ -170,8 +170,14 @@ def save_compressed_file(filename, bwt_result, index_bwt, codes, compressed_sequ
 
 # Ejemplo de uso
 if __name__ == '__main__':
+
+    nombre_archivo = input("Ingrese el nombre del archivo: ")
+
+    if not nombre_archivo.endswith(".txt"):
+        nombre_archivo += ".txt"
+
     # Paso 1: Leer el archivo original
-    texto_original = read_text_as_utf8('texto_original.txt')
+    texto_original = read_text_as_utf8(nombre_archivo)
     if texto_original is None:
         exit(1)
     # Paso 2: Aplicar BWT
@@ -200,9 +206,8 @@ if __name__ == '__main__':
     import os
     original_size = len(texto_original.encode('utf-8'))
     compressed_size = os.path.getsize('comprimido.bwtsh')
-    compression_ratio = (compressed_size / original_size) * 100
+  
     
     print(f"\nEstadísticas de compresión:")
     print(f"Tamaño original: {original_size} bytes")
     print(f"Tamaño comprimido: {compressed_size} bytes")
-    print(f"Ratio de compresión: {compression_ratio:.2f}%")
